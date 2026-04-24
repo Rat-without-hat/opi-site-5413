@@ -166,21 +166,18 @@ with main_col_1:
 
     start_tab = sub_col_1.number_input(label="",
                                        step=0.1,
-                                       format="%0.1f",
                                        key="start_tab",
                                        value=None,
                                        placeholder="x0",
                                        label_visibility="collapsed")
     step_tab = sub_col_2.number_input(label="",
                                       step=0.1,
-                                      format="%0.1f",
                                       key="step_tab",
                                       value=None,
                                       placeholder="xh",
                                       label_visibility="collapsed")
     end_tab = sub_col_3.number_input(label="",
                                      step=0.1,
-                                     format="%0.1f",
                                      key="end_tab",
                                      value=None,
                                      placeholder="xn",
