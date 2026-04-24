@@ -123,8 +123,8 @@ x_func_val = np.array([])
 y_func_val = np.array([])
 func_val = pd.DataFrame()
 
-start_tab = 0
-end_tab = 0
+start_tab = 1
+end_tab = 1
 
 with main_col_3:
 
