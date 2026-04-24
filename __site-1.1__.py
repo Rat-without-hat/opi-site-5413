@@ -385,8 +385,8 @@ graph_fig.set_size_inches(15, 13.5)
 if st.session_state.button_grid:
     ax.grid()
 
-ax.set_xlim(10 * st.session_state.coef_size, 10 * st.session_state.coef_size)
-ax.set_ylim(10 * st.session_state.coef_size, 10 * st.session_state.coef_size)
+ax.set_xlim(-10 * st.session_state.coef_size, 10 * st.session_state.coef_size)
+ax.set_ylim(-10 * st.session_state.coef_size, 10 * st.session_state.coef_size)
 
 ax.set_facecolor((.0588, .0667, .0863))
 
