@@ -123,6 +123,9 @@ x_func_val = np.array([])
 y_func_val = np.array([])
 func_val = pd.DataFrame()
 
+start_tab = 0
+end_tab = 0
+
 with main_col_3:
 
     lan_list = ["Русский", "English"]
@@ -385,8 +388,8 @@ graph_fig.set_size_inches(15, 13.5)
 if st.session_state.button_grid:
     ax.grid()
 
-ax.set_xlim(-1 * st.session_state.coef_size, 1 * st.session_state.coef_size)
-ax.set_ylim(-1 * st.session_state.coef_size, 1 * st.session_state.coef_size)
+ax.set_xlim(start_tab * st.session_state.coef_size, end_tab * st.session_state.coef_size)
+ax.set_ylim(start_tab * st.session_state.coef_size, end_tab * st.session_state.coef_size)
 
 ax.set_facecolor((.0588, .0667, .0863))
 
