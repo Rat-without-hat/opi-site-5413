@@ -54,6 +54,12 @@ def reset_features():
     st.session_state.E_section = None
     st.session_state.even_feature = None
 
+if 'start_size' not in st.session_state:
+    st.session_state.start_size = 1
+
+if 'end_size' not in st.session_state:
+    st.session_state.end_size = 1
+
 def convert_for_saving(df):
     return df.to_csv(index=False).encode("utf-8")
 
@@ -123,9 +129,6 @@ x_func_val = np.array([])
 y_func_val = np.array([])
 func_val = pd.DataFrame()
 
-start_tab = 1
-end_tab = 1
-
 with main_col_3:
 
     lan_list = ["Русский", "English"]
@@ -188,6 +191,8 @@ with main_col_1:
 
     if start_tab and end_tab and step_tab:
         x_func_val = np.arange(start_tab, end_tab, step_tab, dtype=np.float64)
+        st.session_state.start_size = start_tab
+        st.session_state.end_size = end_tab
 
     if accuracy_val:
         len_accuracy = int(len(str(accuracy_val)[2:]))
@@ -388,8 +393,8 @@ graph_fig.set_size_inches(15, 13.5)
 if st.session_state.button_grid:
     ax.grid()
 
-ax.set_xlim(start_tab * st.session_state.coef_size, end_tab * st.session_state.coef_size)
-ax.set_ylim(start_tab * st.session_state.coef_size, end_tab * st.session_state.coef_size)
+ax.set_xlim(st.session_state.start_size * st.session_state.coef_size, st.session_state.end_size * st.session_state.coef_size)
+ax.set_ylim(st.session_state.start_size * st.session_state.coef_size, st.session_state.end_size * st.session_state.coef_size)
 
 ax.set_facecolor((.0588, .0667, .0863))
 
